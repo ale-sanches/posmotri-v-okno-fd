@@ -3,7 +3,6 @@
     --second-family: "Oswald", sans-serif;
 }
 
-/* Сбросы */
 *,
 *::before,
 *::after {
@@ -33,13 +32,14 @@ ul, ol {
     white-space: nowrap;
 }
 
-/* Сброс скроллбара */
 .custom-scrollbar::-webkit-scrollbar {
     width: 4px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
     background: rgb(217 217 217 / 10%);
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
     background-color: #D9D9D9;
 }
@@ -138,6 +138,15 @@ ul, ol {
     gap: 15px;
 }
 
+.search-form__textfield:focus {
+    outline: none;
+}
+
+.search-form__label:has(:not(:active):focus-visible) {
+    outline: 1px #fff solid;
+    outline-offset: 2px;
+}
+
 .search-form__textfield {
     width: 225px;
     height: 27px;
@@ -152,9 +161,6 @@ ul, ol {
     appearance: none;
 }
 
-.search-form__textfield:focus {
-    outline: none;
-}
 
 .search-form__textfield::placeholder {
     color: rgba(255, 255, 255, 0.7);
@@ -186,7 +192,7 @@ ul, ol {
     flex-direction: column;
     gap: 30px;
     height: 298px;
-    overflow-y: scroll;
+    overflow-y: auto;
     position: relative;
 }
 
@@ -197,8 +203,10 @@ ul, ol {
 }
 
 .content__list-item {
-    height: 103px;
+    min-height: 103px;
     cursor: pointer;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 .content__list-item:active {
@@ -237,7 +245,7 @@ ul, ol {
 .content__video-card-thumbnail {
     height: 103px;
     min-width: 194px;
-    object-fit: fill;
+    object-fit: cover;
     object-position: right top;
     flex-shrink: 0;
 }
